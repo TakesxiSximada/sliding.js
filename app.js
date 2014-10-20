@@ -40,9 +40,16 @@
                 'change': 'render'
             },
             onRender: function (){
-                this.$el.css({
-                    'display': this.model.is_display ? 'block' : 'none'
-                });
+                this.update();
+            },
+            update: function (){
+                this.$el.fadeOut('slow');
+                if (this.model.is_display){
+                    this.$el.fadeIn('slow');
+                }
+            },
+            is_unmatch_status: function (){
+                return true;
             }
         });
 
@@ -63,13 +70,15 @@
             },
 
             onInputKeypress: function (event){
-                var name = event.target.value.trim();
-                if (event.which == 13 && name){
+                var value_org = this.ui.input.val();
+                var value = value_org.trim().toUpperCase();
+                if (event.which == 13 && value){
                     this.collection.each(function (slide){
-                        slide.is_display = slide.title.indexOf(name) !== -1 ? true : false;
-                        console.log(slide.is_display);
+                        slide.is_display = slide.title.toUpperCase().indexOf(value) !== -1 ? true : false;
                     });
-                    this.render();
+                    this.children.each(function (view){
+                        view.update();
+                    });
                 }
             }
         });
@@ -83,6 +92,7 @@
                     this.collection.each(function (slide){
                         slide.is_display = false;
                     });
+
                 }
             }
         });
@@ -129,7 +139,6 @@
             },
             search: function (){
                 console.log("controller search");
-
             }
         });
 
