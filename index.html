@@ -1,0 +1,83 @@
+<!DOCTYPE >
+<html lang="ja">
+  <body>
+    <script type="text/html" id="template-slide-list-view">
+      <input id="search-slide" placeholder="What needs to be done?" autofocus />
+      <div id="slide-list" class="row"></div>
+    </script>
+
+    <script type="text/html" id="template-slide-view">
+      <section class="slide col-md-3"">
+        <a href="<%- url %>">
+          <img src="<%- thumbnail %>" alt="<%- title %>">
+        </a>
+        <h1><a href="<%- url %>"><%- title %></a></h1>
+      </section>
+    </script>
+
+    <div class="container-fluid reveal">
+      <div class="slides">
+        <section id="search"></section>
+        <section id="content"></section>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script>
+    <script src="/bower_components/backbone/backbone.js"></script>
+    <script src="/lib/backbone.localStorage/backbone.localStorage.js"></script>
+    <script src="/bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+      $(function (){
+          sliding.start();
+      });
+    </script>
+
+    <style>
+      .slide {
+          margin-bottom: 2em;
+          text-align: center;
+      }
+
+      .slide img{
+          height: 100px;
+      }
+      .slide h1{
+          font-size: 1.5em;
+      }
+    </style>
+
+    <!--
+    <link rel="stylesheet" href="/lib/reveal.js/css/reveal.min.css"/>
+    <link rel="stylesheet" href="/lib/reveal.js/css/theme/default.css" id="theme"/>
+    <link rel="stylesheet" href="/lib/reveal.js/lib/css/zenburn.css" />
+    <script src="/lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="/lib/reveal.js/js/reveal.js"></script>
+    <script>
+  var qhash = Reveal.getQueryHash();
+  Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: true,
+        theme: qhash.theme,
+        transition: qhash.transition || 'default',
+        dependencies: [
+            { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: '/lib/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+  });
+
+    </script>
+    -->
+  </body>
+</html>
