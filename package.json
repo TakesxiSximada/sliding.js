@@ -1,0 +1,23 @@
+{
+  "name": "TakesxiSximada",
+  "version": "0.0.0",
+  "description": "takesxisximada.github.com =========================",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TakesxiSximada/takesxisximada.github.com.git"
+  },
+  "author": "TakesxiSximada <takesxi.sximada@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TakesxiSximada/takesxisximada.github.com/issues"
+  },
+  "homepage": "https://github.com/TakesxiSximada/takesxisximada.github.com"
+}
