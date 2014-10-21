@@ -1,0 +1,71 @@
+<!DOCTYPE >
+<html lang="ja">
+  <body>
+    <script type="text/html" id="template-slide-list-view">
+      <div class="row">
+        <div class="col-md-6" style="margin: 50px;">
+          <input id="search-slide" placeholder="What needs to be done?" style="width: 300px" autofocus />
+        </div>
+      </div>
+      <div id="slide-list" class="row"></div>
+    </script>
+
+    <script type="text/html" id="template-slide-view">
+      <section class="slide col-md-3">
+        <a href="<%- url %>">
+          <img src="<%- thumbnail %>" alt="<%- title %>">
+        </a>
+        <h1><a href="<%- url %>"><%- title %></a></h1>
+      </section>
+    </script>
+
+    <div class="container-fluid">
+      <div class="slides">
+        <section>
+          <h2>Slide list:</h2>
+          <div id="content"></div>
+        </section>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="/lib/jquery-ui/themes/base/all.css">
+    <script src="/lib/jquery-ui/jquery-ui.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script>
+    <script src="/bower_components/backbone/backbone.js"></script>
+    <script src="/lib/backbone.localStorage/backbone.localStorage.js"></script>
+    <script src="/bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
+    <script src="../sliding.js"></script>
+
+    <script>
+      $(function (){
+          var sliding = Sliding({
+              api_url: '/api/slides.json',
+              slide_view_tmpl: '#template-slide-view',
+              slide_list_view_tmpl: '#template-slide-list-view',
+              slide_view_container: '#slide-list',
+              slide_search_input: '#search-slide',
+              main_region: '#content',
+              storage_name: 'sliding'
+          }).start();
+      });
+    </script>
+
+    <style>
+      .slide {
+          margin-bottom: 2em;
+          text-align: center;
+      }
+
+      .slide img{
+          height: 100px;
+      }
+      .slide h1{
+          font-size: 1.5em;
+      }
+    </style>
+  </body>
+</html>
