@@ -1,8 +1,16 @@
 // -*- coding: utf-8 -*-
-/** Sliding -  The Slides searching application for Reveal.js slides
- *
- *  @author: TakesxiSximada <takesxi.sximada@gmail.com>
- */
+//
+// **********
+// sliding.js
+// **********
+//
+// The sliding.js may be freely distributed under the MIT license.
+// For all details and documentation:
+//
+// https://github.com/TakesxiSximada/sliding.js
+//
+// Copyright (C) 2014 TakesxiSximada
+//
 
 (function (global){
     'use strict';
