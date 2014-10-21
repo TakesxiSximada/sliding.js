@@ -1,0 +1,24 @@
+{
+  "name": "sliding.js",
+  "version": "0.0.1",
+  "authors": [
+    "TakesxiSximada <takesxi.sximada@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~2.2.1",
+    "jquery": "~2.2.1",
+    "jquery-ui": "~2.2.1",
+    "underscore.js": "~2.2.1",
+    "backbone": "~2.2.1",
+    "backbone.marionette": "~2.2.1",
+    "font-awesome": "~4.2.0"
+  }
+}
