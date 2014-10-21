@@ -42,7 +42,15 @@
 
     <script>
       $(function (){
-          sliding.start();
+          var sliding = Sliding({
+              api_url: '/api/slides.json',
+              slide_view_tmpl: '#template-slide-view',
+              slide_list_view_tmpl: '#template-slide-list-view',
+              slide_view_container: '#slide-list',
+              slide_search_input: '#search-slide',
+              main_region: '#content',
+              storage_name: 'sliding'
+          }).start();
       });
     </script>
 
