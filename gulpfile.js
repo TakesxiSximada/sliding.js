@@ -129,6 +129,11 @@ gulp.task('backbone.marionette', function (){
         .pipe(gulp.dest(lib('backbone.marionette/lib')));
 });
 
+gulp.task('backbone.localStorage', function (){
+    gulp.src(bower('backbone.localStorage/backbone.localStorage.js'))
+        .pipe(gulp.dest(lib('backbone.localStorage')));
+});
+
 gulp.task('backbone.wreqr', function (){
     gulp.src(bower('backbone.wreqr/lib/**'))
         .pipe(gulp.dest(lib('backbone.wreqr/lib')));
@@ -171,30 +176,15 @@ gulp.task('vue', function (){
 
 gulp.task('all', function(){
     var install_libs = [
-        'angular',
-        'angular-animate',
-        'angular-resource',
-        'angular-route',
         'bootstrap',
         'font-awesome',
-        'fancyInput',
-        'font-awesome',
-        'fancyInput',
         'jquery',
         'jquery-ui',
-        'd3',
-        'nvd3',
         'backbone',
-        'backbone.babysitter',
         'backbone.marionette',
-        'backbone.wreqr',
-        'momentjs',
-        'pnotify',
-        'react',
-        'require',
-        'underscore',
-        'vis',
-        'vue']
+        'backbone.localStorage',
+        'font-awesome'
+    ]
 
     install_libs.forEach(function (name) {
         gulp.run(name);
